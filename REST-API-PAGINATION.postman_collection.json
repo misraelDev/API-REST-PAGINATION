@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "8d514a09-f9b6-41f4-824a-c3ad3f94fb91",
+		"name": "REST-API-PAGINATION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28468939",
+		"_collection_link": "https://solar-equinox-774205.postman.co/workspace/API-REST-FLACKS~45732b3b-bd65-4789-b11a-3052b0fab47c/collection/28468939-8d514a09-f9b6-41f4-824a-c3ad3f94fb91?action=share&source=collection_link&creator=28468939"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Create a new product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Product 5\",\r\n    \"totalQuantity\": 15,\r\n    \"price\": 150.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Get products",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get paginated products by field.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/paginated-products/totalQuantity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"paginated-products",
+								"totalQuantity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get paginated products by page and number of items.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/paginated-products/pagination/1/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"paginated-products",
+								"pagination",
+								"1",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get paginated and sorted products by field.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/paginated-products/paginationAndSort/1/20/price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"paginated-products",
+								"paginationAndSort",
+								"1",
+								"20",
+								"price"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
